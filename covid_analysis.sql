@@ -2,11 +2,7 @@ SELECT *
 FROM PortfolioProject..CovidDeaths
 ORDER BY 3,4
 
---SELECT *
---FROM PortfolioProject..CovidVacc
---ORDER BY 3,4
-
--- Select Data that we are going to be using
+-- Select the data for analysis
 
 SELECT Location, date, total_cases, new_cases, total_deaths, population
 FROM PortfolioProject..CovidDeaths
@@ -66,8 +62,8 @@ ON V.location = D.location and V.date = D.date
 WHERE D.continent is not null
 ORDER BY 2,3
 
--- USE CTE
 
+-- USING CTE
 with PopvsVac (continent, location, date, population, new_vaccinations, rolling_vaccinated_pop)
 as 
 (
